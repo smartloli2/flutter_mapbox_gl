@@ -232,7 +232,7 @@ class MapboxMapController: NSObject, FlutterPlatformView, MGLMapViewDelegate, Ma
                let right = arguments["right"] as? Double
             {
                 features = mapView.visibleFeatures(
-                    in: CGRect(x: left, y: top, width: right, height: bottom),
+                    in: CGRect(x: left, y: top, width: right - left, height: bottom - top),
                     styleLayerIdentifiers: styleLayerIdentifiers,
                     predicate: filterExpression
                 )
